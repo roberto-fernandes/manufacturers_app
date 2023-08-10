@@ -1,5 +1,5 @@
-import 'package:untitled3/core/utils/typedef.dart';
+import 'package:untitled3/features/manufacturers_list/domain/entities/manufacturers_page.dart';
 
 abstract class ManufacturersListDataSource {
-  Future<ManufacturersPageOr> getManufacturersPage({required int page});
+  Future<ManufacturersPage> getManufacturersPage({required int page});
 }

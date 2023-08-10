@@ -12,13 +12,19 @@ class ManufacturesListScreen extends ConsumerWidget {
         child: AsyncValueWidget<List<ManufacturersPage>>(
           value: state,
           data: (data) {
-            return Column(
-              children: data
+            return Column(children: [
+              ...data
                   .map((e) => Center(
                         child: Text(e.count.toString()),
                       ))
                   .toList(),
-            );
+              ElevatedButton(
+                onPressed: () {
+                  ref.read(manufacturerListProvider.notifier).loadMore();
+                },
+                child: Text('Add'),
+              ),
+            ]);
           },
         ),
       ),

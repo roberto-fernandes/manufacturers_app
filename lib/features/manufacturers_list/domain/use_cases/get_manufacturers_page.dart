@@ -1,5 +1,4 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:untitled3/core/utils/typedef.dart';
 import 'package:untitled3/features/common/domain/usecase.dart';
 import 'package:untitled3/features/manufacturers_list/domain/entities/manufacturers_page.dart';
 import 'package:untitled3/features/manufacturers_list/domain/repositories/manufacturers_list_repository.dart';
@@ -15,7 +14,7 @@ class GetManufacturersPage
   GetManufacturersPage(this.repository);
 
   @override
-  Future<ManufacturersPageOr> call(GetManufacturersPageRequest params) async {
+  Future<ManufacturersPage> call(GetManufacturersPageRequest params) async {
     return repository.getManufacturersPage(
       page: params.page,
     );
