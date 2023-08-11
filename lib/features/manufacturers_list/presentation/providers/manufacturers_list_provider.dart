@@ -16,10 +16,10 @@ class ManufacturerListNotifier
 
   @override
   FutureOr<List<ManufacturersPage>> build() async {
-    return _addNextPage();
+    return _loadData();
   }
 
-  Future<List<ManufacturersPage>> _addNextPage() async {
+  Future<List<ManufacturersPage>> _loadData() async {
     final GetManufacturersPage getManufacturersPage =
         ref.read(getManufacturersPageUseCase);
     _currentPage++;
@@ -30,8 +30,13 @@ class ManufacturerListNotifier
     return clone;
   }
 
-  Future<void> loadMore() async {
+  Future<void> addNextPage() async {
     state = const AsyncLoading();
-    state = await AsyncValue.guard(_addNextPage);
+    state = await AsyncValue.guard(_loadData);
+  }
+
+  Future<void> reset() async {
+    _currentPage = 0;
+    await addNextPage();
   }
 }
