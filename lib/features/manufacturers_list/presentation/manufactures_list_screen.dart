@@ -1,41 +1,45 @@
 part of manufactures_list;
 
 class ManufacturesListScreen extends ConsumerWidget {
-  const ManufacturesListScreen({super.key});
+  final ScrollController _controller = ScrollController();
+
+  ManufacturesListScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final AsyncValue<List<ManufacturersPage>> state =
+    final List<ManufacturersPage> manufacturers =
         ref.watch(manufacturerListProvider);
-    final ManufacturerListNotifier notifier =
-        ref.read(manufacturerListProvider.notifier);
+    final AsyncValue<int> pageState = ref.watch(manufacturersPageNotifier);
+    final notifier = ref.read(manufacturersPageNotifier.notifier);
+
     return Scaffold(
       body: SafeArea(
         child: RefreshIndicator(
-          onRefresh: () async {},
-          child: SingleChildScrollView(
-            physics: const AlwaysScrollableScrollPhysics(),
-            child: AsyncValueWidget<List<ManufacturersPage>>(
-              value: state,
-              data: (data) {
-                return Column(children: [
-                  ...data
-                      .map((e) => Center(
-                            child: Text(e.count.toString()),
-                          ))
-                      .toList(),
-                  ElevatedButton(
-                    onPressed: () {
-                      ref.read(manufacturerListProvider.notifier).addNextPage();
+          onRefresh: notifier.reset,
+          child: ListView(
+            controller: _controller,
+            children: [
+              ...manufacturers.map((e) => Text(e.count.toString())).toList(),
+              AsyncValueWidget<int>(
+                value: pageState,
+                data: (data) {
+                  return ElevatedButton(
+                    onPressed: () async {
+                      await notifier.loadNextPage();
+                      _scrollDown();
                     },
                     child: const Text('Add'),
-                  ),
-                ]);
-              },
-            ),
+                  );
+                },
+              ),
+            ],
           ),
         ),
       ),
     );
+  }
+
+  void _scrollDown() {
+    _controller.jumpTo(_controller.position.maxScrollExtent);
   }
 }

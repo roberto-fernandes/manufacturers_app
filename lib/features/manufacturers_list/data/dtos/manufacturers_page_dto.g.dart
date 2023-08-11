@@ -11,6 +11,10 @@ ManufacturersPageDto _$ManufacturersPageDtoFromJson(
     ManufacturersPageDto(
       message: json['Message'] as String,
       count: json['Count'] as int,
+      results: (json['Results'] as List<dynamic>)
+          .map((e) =>
+              ManufacturersPageResultDto.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$ManufacturersPageDtoToJson(
@@ -18,4 +22,5 @@ Map<String, dynamic> _$ManufacturersPageDtoToJson(
     <String, dynamic>{
       'Message': instance.message,
       'Count': instance.count,
+      'Results': instance.results.map((e) => e.toJson()).toList(),
     };
