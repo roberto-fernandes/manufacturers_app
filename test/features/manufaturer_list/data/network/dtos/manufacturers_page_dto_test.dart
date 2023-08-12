@@ -1,38 +1,35 @@
+
 import 'package:flutter_test/flutter_test.dart';
-import 'package:untitled3/features/manufacturer_details/data/network/dtos/manufacturer_model_dto.dart';
-import 'package:untitled3/features/manufacturer_details/data/network/dtos/manufacturer_model_result_dto.dart';
-import 'package:untitled3/features/manufacturer_details/domain/entities/manufacturer_model.dart';
+import 'package:untitled3/features/manufacturers_list/data/network/dtos/manufacturers_page_dto.dart';
+import 'package:untitled3/features/manufacturers_list/data/network/dtos/manufacturers_page_result_dto.dart';
 
 void main() {
-  group('ManufacturerModelDto', () {
-    const List<ManufacturerModelResultDto> manufacturerModelResultDtos = [
-      ManufacturerModelResultDto(
-        manufacturer: 'Manufacturer1',
-        modelName: 'Model1',
-      ),
-      ManufacturerModelResultDto(
-        manufacturer: 'Manufacturer2',
-        modelName: 'Model2',
-      ),
-    ];
+  group('ManufacturersPageDtoX', () {
+    test('toDomain should convert ManufacturersPageDto to ManufacturersPage', () {
+      const manufacturersPageDto = ManufacturersPageDto(
+        message: 'Success',
+        count: 2,
+        results: [
+          ManufacturersPageResultDto(
+            country: 'Country 1',
+            commonName: 'Common Name 1',
+            id: 1,
+          ),
+          ManufacturersPageResultDto(
+            country: 'Country 2',
+            commonName: 'Common Name 2',
+            id: 2,
+          ),
+        ],
+      );
 
-    const ManufacturerModelDto manufacturerModelDto = ManufacturerModelDto(
-      message: 'Success',
-      count: 2,
-      results: manufacturerModelResultDtos,
-    );
+      final manufacturersPage = manufacturersPageDto.toDomain(1);
 
-    test('toDomain converts ManufacturerModelDto to ManufacturerModel', () {
-      final manufacturerModels = manufacturerModelDto.toDomain();
-
-      expect(manufacturerModels, isA<List<ManufacturerModel>>());
-      expect(manufacturerModels, hasLength(2));
-
-      expect(manufacturerModels[0].manufacturer, 'Manufacturer1');
-      expect(manufacturerModels[0].modelName, 'Model1');
-
-      expect(manufacturerModels[1].manufacturer, 'Manufacturer2');
-      expect(manufacturerModels[1].modelName, 'Model2');
+      expect(manufacturersPage.page, 1);
+      expect(manufacturersPage.count, 2);
+      expect(manufacturersPage.result.length, 2);
+      expect(manufacturersPage.result[0].id, 1);
+      expect(manufacturersPage.result[1].commonName, 'Common Name 2');
     });
   });
 }
