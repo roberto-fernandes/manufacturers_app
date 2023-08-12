@@ -6,6 +6,7 @@ part 'manufacturers_page.freezed.dart';
 @freezed
 class ManufacturersPage with _$ManufacturersPage {
   const factory ManufacturersPage({
+    required int page,
     required int count,
     required List<ManufacturersPageResult> result,
   }) = _ManufacturersPage;

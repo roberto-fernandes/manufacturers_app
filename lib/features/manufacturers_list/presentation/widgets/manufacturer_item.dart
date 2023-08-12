@@ -7,12 +7,12 @@ class _ManufacturerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (item.name == null || item.country == null) {
+    if (item.commonName == null || item.country == null) {
       return const SizedBox();
     }
     return Card(
       child: ListTile(
-        title: Text(item.name!),
+        title: Text(item.commonName!),
         subtitle: Text(item.country!),
       ),
     );

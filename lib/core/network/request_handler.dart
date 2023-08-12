@@ -11,7 +11,7 @@ class RequestHandler {
   /// Singleton instance
   static final RequestHandler _instance = RequestHandler._();
 
-  //( Accessor to get the instance
+  /// Accessor to get the instance
   static RequestHandler get instance => _instance;
 
   final _dio = Dio(BaseOptions(

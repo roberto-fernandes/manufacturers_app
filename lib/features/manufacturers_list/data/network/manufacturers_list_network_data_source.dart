@@ -24,7 +24,7 @@ class ManufacturersListNetworkDataSource extends ManufacturersListDataSource {
           'page': '$page',
         },
         mapper: (data, headers) {
-          return ManufacturersPageDto.fromJson(data).toDomain();
+          return ManufacturersPageDto.fromJson(data).toDomain(page);
         },
       );
     } catch (e) {

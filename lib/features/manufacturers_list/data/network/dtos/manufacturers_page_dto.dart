@@ -26,8 +26,9 @@ class ManufacturersPageDto {
 }
 
 extension ManufacturersPageDtoX on ManufacturersPageDto {
-  ManufacturersPage toDomain() {
+  ManufacturersPage toDomain(int page) {
     return ManufacturersPage(
+      page: page,
       count: count,
       result: results.map((e) => e.toDomain()).toList(),
     );

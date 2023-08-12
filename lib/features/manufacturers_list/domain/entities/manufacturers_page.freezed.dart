@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ManufacturersPage {
+  int get page => throw _privateConstructorUsedError;
   int get count => throw _privateConstructorUsedError;
   List<ManufacturersPageResult> get result =>
       throw _privateConstructorUsedError;
@@ -31,7 +32,7 @@ abstract class $ManufacturersPageCopyWith<$Res> {
           ManufacturersPage value, $Res Function(ManufacturersPage) then) =
       _$ManufacturersPageCopyWithImpl<$Res, ManufacturersPage>;
   @useResult
-  $Res call({int count, List<ManufacturersPageResult> result});
+  $Res call({int page, int count, List<ManufacturersPageResult> result});
 }
 
 /// @nodoc
@@ -47,10 +48,15 @@ class _$ManufacturersPageCopyWithImpl<$Res, $Val extends ManufacturersPage>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? page = null,
     Object? count = null,
     Object? result = null,
   }) {
     return _then(_value.copyWith(
+      page: null == page
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
@@ -71,7 +77,7 @@ abstract class _$$_ManufacturersPageCopyWith<$Res>
       __$$_ManufacturersPageCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int count, List<ManufacturersPageResult> result});
+  $Res call({int page, int count, List<ManufacturersPageResult> result});
 }
 
 /// @nodoc
@@ -85,10 +91,15 @@ class __$$_ManufacturersPageCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? page = null,
     Object? count = null,
     Object? result = null,
   }) {
     return _then(_$_ManufacturersPage(
+      page: null == page
+          ? _value.page
+          : page // ignore: cast_nullable_to_non_nullable
+              as int,
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
@@ -105,10 +116,13 @@ class __$$_ManufacturersPageCopyWithImpl<$Res>
 
 class _$_ManufacturersPage implements _ManufacturersPage {
   const _$_ManufacturersPage(
-      {required this.count,
+      {required this.page,
+      required this.count,
       required final List<ManufacturersPageResult> result})
       : _result = result;
 
+  @override
+  final int page;
   @override
   final int count;
   final List<ManufacturersPageResult> _result;
@@ -121,7 +135,7 @@ class _$_ManufacturersPage implements _ManufacturersPage {
 
   @override
   String toString() {
-    return 'ManufacturersPage(count: $count, result: $result)';
+    return 'ManufacturersPage(page: $page, count: $count, result: $result)';
   }
 
   @override
@@ -129,13 +143,14 @@ class _$_ManufacturersPage implements _ManufacturersPage {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ManufacturersPage &&
+            (identical(other.page, page) || other.page == page) &&
             (identical(other.count, count) || other.count == count) &&
             const DeepCollectionEquality().equals(other._result, _result));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, count, const DeepCollectionEquality().hash(_result));
+      runtimeType, page, count, const DeepCollectionEquality().hash(_result));
 
   @JsonKey(ignore: true)
   @override
@@ -147,10 +162,13 @@ class _$_ManufacturersPage implements _ManufacturersPage {
 
 abstract class _ManufacturersPage implements ManufacturersPage {
   const factory _ManufacturersPage(
-          {required final int count,
+          {required final int page,
+          required final int count,
           required final List<ManufacturersPageResult> result}) =
       _$_ManufacturersPage;
 
+  @override
+  int get page;
   @override
   int get count;
   @override

@@ -2,4 +2,5 @@ import 'package:untitled3/features/manufacturers_list/domain/entities/manufactur
 
 abstract class ManufacturersListDataSource {
   Future<ManufacturersPage> getManufacturersPage({required int page});
+  Future<void> saveManufacturersPage({required ManufacturersPage manufacturersPage}) async {}
 }

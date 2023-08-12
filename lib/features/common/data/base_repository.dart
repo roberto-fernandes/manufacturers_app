@@ -12,13 +12,13 @@ abstract class BaseRepository<T> {
   /// Constructor that takes in the default data source type, and data sources,
   BaseRepository({
     DataSourceType defaultDataSourceType = DataSourceType.network,
-    this.localDataSource,
+    this.storageDataSource,
     this.networkDataSource,
   });
 
-  /// [localDataSource] - The local data source object.
+  /// [storageDataSource] - The local data source object.
   /// [networkDataSource] - networkDataSource The network data source object.
-  final T? localDataSource;
+  final T? storageDataSource;
   final T? networkDataSource;
 
 }

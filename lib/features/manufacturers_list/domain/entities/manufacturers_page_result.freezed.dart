@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$ManufacturersPageResult {
   String? get country => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  String? get commonName => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -31,7 +31,7 @@ abstract class $ManufacturersPageResultCopyWith<$Res> {
           $Res Function(ManufacturersPageResult) then) =
       _$ManufacturersPageResultCopyWithImpl<$Res, ManufacturersPageResult>;
   @useResult
-  $Res call({String? country, String? name, int id});
+  $Res call({String? country, String? commonName, int id});
 }
 
 /// @nodoc
@@ -49,7 +49,7 @@ class _$ManufacturersPageResultCopyWithImpl<$Res,
   @override
   $Res call({
     Object? country = freezed,
-    Object? name = freezed,
+    Object? commonName = freezed,
     Object? id = null,
   }) {
     return _then(_value.copyWith(
@@ -57,9 +57,9 @@ class _$ManufacturersPageResultCopyWithImpl<$Res,
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      commonName: freezed == commonName
+          ? _value.commonName
+          : commonName // ignore: cast_nullable_to_non_nullable
               as String?,
       id: null == id
           ? _value.id
@@ -77,7 +77,7 @@ abstract class _$$_ManufacturersPageResultCopyWith<$Res>
       __$$_ManufacturersPageResultCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? country, String? name, int id});
+  $Res call({String? country, String? commonName, int id});
 }
 
 /// @nodoc
@@ -93,7 +93,7 @@ class __$$_ManufacturersPageResultCopyWithImpl<$Res>
   @override
   $Res call({
     Object? country = freezed,
-    Object? name = freezed,
+    Object? commonName = freezed,
     Object? id = null,
   }) {
     return _then(_$_ManufacturersPageResult(
@@ -101,9 +101,9 @@ class __$$_ManufacturersPageResultCopyWithImpl<$Res>
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
               as String?,
-      name: freezed == name
-          ? _value.name
-          : name // ignore: cast_nullable_to_non_nullable
+      commonName: freezed == commonName
+          ? _value.commonName
+          : commonName // ignore: cast_nullable_to_non_nullable
               as String?,
       id: null == id
           ? _value.id
@@ -117,18 +117,18 @@ class __$$_ManufacturersPageResultCopyWithImpl<$Res>
 
 class _$_ManufacturersPageResult implements _ManufacturersPageResult {
   const _$_ManufacturersPageResult(
-      {required this.country, required this.name, required this.id});
+      {required this.country, required this.commonName, required this.id});
 
   @override
   final String? country;
   @override
-  final String? name;
+  final String? commonName;
   @override
   final int id;
 
   @override
   String toString() {
-    return 'ManufacturersPageResult(country: $country, name: $name, id: $id)';
+    return 'ManufacturersPageResult(country: $country, commonName: $commonName, id: $id)';
   }
 
   @override
@@ -137,12 +137,13 @@ class _$_ManufacturersPageResult implements _ManufacturersPageResult {
         (other.runtimeType == runtimeType &&
             other is _$_ManufacturersPageResult &&
             (identical(other.country, country) || other.country == country) &&
-            (identical(other.name, name) || other.name == name) &&
+            (identical(other.commonName, commonName) ||
+                other.commonName == commonName) &&
             (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, country, name, id);
+  int get hashCode => Object.hash(runtimeType, country, commonName, id);
 
   @JsonKey(ignore: true)
   @override
@@ -156,13 +157,13 @@ class _$_ManufacturersPageResult implements _ManufacturersPageResult {
 abstract class _ManufacturersPageResult implements ManufacturersPageResult {
   const factory _ManufacturersPageResult(
       {required final String? country,
-      required final String? name,
+      required final String? commonName,
       required final int id}) = _$_ManufacturersPageResult;
 
   @override
   String? get country;
   @override
-  String? get name;
+  String? get commonName;
   @override
   int get id;
   @override

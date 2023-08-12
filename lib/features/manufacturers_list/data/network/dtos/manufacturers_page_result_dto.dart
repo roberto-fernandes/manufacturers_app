@@ -28,7 +28,7 @@ extension ManufacturersPageResultDtoX on ManufacturersPageResultDto {
   ManufacturersPageResult toDomain() {
     return ManufacturersPageResult(
       country: country,
-      name: commonName,
+      commonName: commonName,
       id: id,
     );
   }
