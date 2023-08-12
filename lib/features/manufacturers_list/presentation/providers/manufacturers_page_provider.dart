@@ -6,11 +6,11 @@ import 'package:untitled3/features/manufacturers_list/domain/use_cases/get_manuf
 import 'package:untitled3/features/manufacturers_list/presentation/providers/manufacturers_list_provider.dart';
 
 final manufacturersPageNotifier =
-    AsyncNotifierProvider<ManufacturersPageProvider, int>(
-  ManufacturersPageProvider.new,
+    AsyncNotifierProvider<ManufacturersPageNotifier, int>(
+  ManufacturersPageNotifier.new,
 );
 
-class ManufacturersPageProvider extends AsyncNotifier<int> {
+class ManufacturersPageNotifier extends AsyncNotifier<int> {
   @override
   FutureOr<int> build() async {
     state = const AsyncData(0);

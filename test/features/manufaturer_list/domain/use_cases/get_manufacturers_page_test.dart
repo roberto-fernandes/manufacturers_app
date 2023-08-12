@@ -38,7 +38,7 @@ void main() {
 
     expect(result, expectedResult);
 
-    // Verify that the repository method was called with the correct argument
+    // Verifies that the repository method was called with the correct argument
     verify(mockRepository.getManufacturersPage(page: page)).called(1);
 
     container.dispose();
