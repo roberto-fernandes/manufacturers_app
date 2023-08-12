@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 
-
+/// Getter Method For Convenience Instance Access
+RequestHandler get requestHandler => RequestHandler.instance;
 
 class RequestHandler {
   static const String _baseUrl = 'https://vpic.nhtsa.dot.gov/api/';

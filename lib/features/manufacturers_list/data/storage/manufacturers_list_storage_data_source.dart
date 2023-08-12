@@ -12,7 +12,7 @@ final manufacturersListStorageDataSource =
 );
 
 class ManufacturersListStorageDataSource extends ManufacturersListDataSource {
-  Isar get _isar => StorageHandler.instance.isar;
+  Isar get _isar => storageHandler.isar;
 
   @override
   Future<ManufacturersPage> getManufacturersPage({required int page}) async {

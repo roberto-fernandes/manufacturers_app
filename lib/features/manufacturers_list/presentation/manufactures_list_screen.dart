@@ -1,5 +1,6 @@
 part of manufactures_list;
 
+@RoutePage()
 class ManufacturesListScreen extends ConsumerWidget {
   final ScrollController _controller = ScrollController();
 

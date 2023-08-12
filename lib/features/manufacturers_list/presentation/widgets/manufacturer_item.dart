@@ -12,6 +12,7 @@ class _ManufacturerItem extends StatelessWidget {
     }
     return Card(
       child: ListTile(
+        onTap: () => appNavigation.pushManufacturerDetails(item),
         title: Text(item.commonName!),
         subtitle: Text(item.country!),
       ),

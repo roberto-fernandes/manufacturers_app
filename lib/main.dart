@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:untitled3/core/navigation/app_router.dart';
 import 'package:untitled3/core/storage/storage_handler.dart';
-import 'package:untitled3/features/manufacturers_list/presentation/manufactures_list.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await StorageHandler.instance.openDB();
-  runApp(const ProviderScope(child: MyApp()));
+  await storageHandler.openDB();
+  runApp(ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter.config(),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ManufacturesListScreen(),
     );
   }
 }
