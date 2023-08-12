@@ -26,7 +26,6 @@ class ManufacturerModelNotifier
 
   Future<void> refresh() async {
     state = const AsyncLoading();
-    await Future.delayed(Duration(seconds: 1));
     state = await AsyncValue.guard(_loadModel);
   }
 }

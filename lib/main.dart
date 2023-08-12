@@ -6,11 +6,11 @@ import 'package:untitled3/core/storage/storage_handler.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await storageHandler.openDB();
-  runApp(ProviderScope(child: MyApp()));
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
