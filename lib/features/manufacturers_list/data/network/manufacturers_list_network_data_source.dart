@@ -8,18 +8,24 @@ import 'package:untitled3/features/manufacturers_list/domain/entities/manufactur
 
 final manufacturersListNetworkDataSource =
     Provider<ManufacturersListDataSource>(
-  (ref) => ManufacturersListNetworkDataSource(),
+  (ref) => ManufacturersListNetworkDataSource(
+    ref.read(requestHandler),
+  ),
 );
 
 class ManufacturersListNetworkDataSource extends ManufacturersListDataSource {
-  final String _vehicles = 'vehicles';
-  final String _getallmanufacturers = 'getallmanufacturers';
+  static const String _vehicles = 'vehicles';
+  static const String _getallmanufacturers = 'getallmanufacturers';
+
+  final RequestHandler _requestHandler;
+
+  ManufacturersListNetworkDataSource(this._requestHandler);
 
   @override
   Future<ManufacturersPage> getManufacturersPage({required int page}) async {
     try {
       debugPrint('getManufacturersPage network $page');
-      return requestHandler.get<ManufacturersPage>(
+      return _requestHandler.get<ManufacturersPage>(
         path: '$_vehicles/$_getallmanufacturers',
         queryParameters: {
           'format': 'json',

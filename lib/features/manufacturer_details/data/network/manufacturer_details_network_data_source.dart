@@ -8,20 +8,27 @@ import 'package:untitled3/features/manufacturer_details/domain/entities/manufact
 
 final manufacturerDetailsNetworkDataSource =
     Provider<ManufacturerDetailsDataSource>(
-  (ref) => ManufacturerDetailsNetworkDataSource(),
+  (ref) => ManufacturerDetailsNetworkDataSource(
+    ref.read(requestHandler),
+  ),
 );
 
 class ManufacturerDetailsNetworkDataSource
     extends ManufacturerDetailsDataSource {
-  final String _vehicles = 'vehicles';
-  final String _getmodelsformake = 'getmodelsformake';
+  static const String _vehicles = 'vehicles';
+  static const String _getmodelsformake = 'getmodelsformake';
+
+  final RequestHandler _requestHandler;
+
+  ManufacturerDetailsNetworkDataSource(this._requestHandler);
 
   @override
-  Future<List<ManufacturerModel>> getManufacturerModel(
-      {required String manufacturer}) {
+  Future<List<ManufacturerModel>> getManufacturerModel({
+    required String manufacturer,
+  }) async {
     try {
       debugPrint('getManufacturerModel network $manufacturer');
-      return requestHandler.get<List<ManufacturerModel>>(
+      final List<ManufacturerModel> manufacturers = await _requestHandler.get<List<ManufacturerModel>>(
         path: '$_vehicles/$_getmodelsformake/$manufacturer',
         queryParameters: {
           'format': 'json',
@@ -30,6 +37,7 @@ class ManufacturerDetailsNetworkDataSource
           return ManufacturerModelDto.fromJson(data).toDomain();
         },
       );
+      return manufacturers;
     } catch (e) {
       throw ServerException.generic(e);
     }

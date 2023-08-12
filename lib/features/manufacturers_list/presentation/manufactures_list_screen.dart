@@ -44,7 +44,7 @@ class ManufacturesListScreen extends ConsumerWidget {
                         await notifier.loadNextPage();
                         _scrollDown();
                       },
-                      child: const Text('Add'),
+                      child: const Text('Load More'),
                     );
                   },
                 ),

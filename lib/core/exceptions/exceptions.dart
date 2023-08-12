@@ -5,7 +5,7 @@ abstract class BaseException implements Exception {
   BaseException(this.message, this.origin);
 
   @override
-  String toString() => message;
+  String toString() => 'message: $message | origin: $origin';
 }
 
 class ServerException extends BaseException {
