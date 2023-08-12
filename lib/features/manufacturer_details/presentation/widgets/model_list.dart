@@ -1,9 +1,9 @@
 part of manufactures_details;
 
-class _ModelList extends ConsumerWidget {
+class ModelList extends ConsumerWidget {
   final String manufacturer;
 
-  const _ModelList({
+  const ModelList({
     required this.manufacturer,
   });
 
