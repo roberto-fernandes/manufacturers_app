@@ -20,7 +20,7 @@ class ManufacturerDetailsNetworkDataSource
   Future<List<ManufacturerModel>> getManufacturerModel(
       {required String manufacturer}) {
     try {
-      debugPrint('getManufacturerModel network');
+      debugPrint('getManufacturerModel network $manufacturer');
       return requestHandler.get<List<ManufacturerModel>>(
         path: '$_vehicles/$_getmodelsformake/$manufacturer',
         queryParameters: {

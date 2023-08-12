@@ -20,7 +20,7 @@ class ManufacturerDetailsStorageDataSource
   Future<List<ManufacturerModel>> getManufacturerModel(
       {required String manufacturer}) async {
     try {
-      debugPrint('getManufacturerModel storage');
+      debugPrint('getManufacturerModel storage $manufacturer');
       final ManufacturerModelCollection? collection = _isar
           .manufacturerModelCollections
           .getByManufacturerSync(manufacturer);

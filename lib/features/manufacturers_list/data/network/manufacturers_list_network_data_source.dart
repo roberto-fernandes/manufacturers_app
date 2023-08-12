@@ -18,7 +18,7 @@ class ManufacturersListNetworkDataSource extends ManufacturersListDataSource {
   @override
   Future<ManufacturersPage> getManufacturersPage({required int page}) async {
     try {
-      debugPrint('getManufacturersPage network');
+      debugPrint('getManufacturersPage network $page');
       return requestHandler.get<ManufacturersPage>(
         path: '$_vehicles/$_getallmanufacturers',
         queryParameters: {

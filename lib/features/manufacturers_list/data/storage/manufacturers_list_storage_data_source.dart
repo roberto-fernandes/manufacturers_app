@@ -18,7 +18,7 @@ class ManufacturersListStorageDataSource extends ManufacturersListDataSource {
   @override
   Future<ManufacturersPage> getManufacturersPage({required int page}) async {
     try {
-      debugPrint('getManufacturersPage storage');
+      debugPrint('getManufacturersPage storage $page');
       final ManufacturersPageCollection? collection = await _isar.manufacturersPageCollections.get(page);
       final ManufacturersPage manufacturersPage = collection!.toDomain();
       return manufacturersPage;
