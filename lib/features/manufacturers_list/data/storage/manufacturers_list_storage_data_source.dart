@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:isar/isar.dart';
 import 'package:untitled3/core/exceptions/exceptions.dart';
@@ -17,6 +18,7 @@ class ManufacturersListStorageDataSource extends ManufacturersListDataSource {
   @override
   Future<ManufacturersPage> getManufacturersPage({required int page}) async {
     try {
+      debugPrint('getManufacturersPage storage');
       final ManufacturersPageCollection? collection = await _isar.manufacturersPageCollections.get(page);
       final ManufacturersPage manufacturersPage = collection!.toDomain();
       return manufacturersPage;
@@ -31,6 +33,6 @@ class ManufacturersListStorageDataSource extends ManufacturersListDataSource {
   }) async {
     final ManufacturersPageCollection collection =
         ManufacturersPageCollectionX.fromDomain(manufacturersPage);
-    _isar.writeTxn(() => _isar.manufacturersPageCollections.put(collection));
+    await _isar.writeTxn(() => _isar.manufacturersPageCollections.put(collection));
   }
 }

@@ -29,7 +29,9 @@ class AsyncValueWidget<T> extends StatelessWidget {
               (kDebugMode ? '$e $st' : 'Error'),
             ),
           ),
-      loading: () => const CircularProgressIndicator.adaptive(),
+      loading: () => const Center(
+        child: CircularProgressIndicator.adaptive(),
+      ),
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:untitled3/core/exceptions/exceptions.dart';
 import 'package:untitled3/core/network/request_handler.dart';
@@ -17,6 +18,7 @@ class ManufacturersListNetworkDataSource extends ManufacturersListDataSource {
   @override
   Future<ManufacturersPage> getManufacturersPage({required int page}) async {
     try {
+      debugPrint('getManufacturersPage network');
       return requestHandler.get<ManufacturersPage>(
         path: '$_vehicles/$_getallmanufacturers',
         queryParameters: {

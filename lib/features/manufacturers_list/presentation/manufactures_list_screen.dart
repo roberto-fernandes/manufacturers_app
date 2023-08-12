@@ -14,6 +14,9 @@ class ManufacturesListScreen extends ConsumerWidget {
     final notifier = ref.read(manufacturersPageNotifier.notifier);
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Manufacturers'),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(
@@ -28,15 +31,8 @@ class ManufacturesListScreen extends ConsumerWidget {
                   ...page.result.map((e) => _ManufacturerItem(e)).toList(),
                 AsyncValueWidget<int>(
                   value: pageState,
-                  customError: Column(
-                    children: [
-                      const Center(child: Text('Unable to load data')),
-                      const SizedBox(height: SizeConfig.innerSectionSpace),
-                      ElevatedButton(
-                        onPressed: notifier.reloadPage,
-                        child: const Text('Retry'),
-                      ),
-                    ],
+                  customError: RetryWidget(
+                    onRetry: notifier.reloadPage,
                   ),
                   data: (pageData) {
                     if (manufacturers.isNotEmpty &&

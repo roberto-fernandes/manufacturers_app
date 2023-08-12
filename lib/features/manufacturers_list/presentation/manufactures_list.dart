@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:untitled3/core/navigation/app_navigation.dart';
 import 'package:untitled3/features/common/presentation/utils/size_config.dart';
 import 'package:untitled3/features/common/presentation/widgets/async_value_widget.dart';
+import 'package:untitled3/features/common/presentation/widgets/retry_widget.dart';
 import 'package:untitled3/features/manufacturers_list/domain/entities/manufacturers_page.dart';
 import 'package:untitled3/features/manufacturers_list/domain/entities/manufacturers_page_result.dart';
 import 'package:untitled3/features/manufacturers_list/presentation/providers/manufacturers_list_provider.dart';

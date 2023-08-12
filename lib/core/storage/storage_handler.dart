@@ -1,5 +1,6 @@
 import 'package:isar/isar.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:untitled3/features/manufacturer_details/data/storage/collections/manufacturer_model_collection.dart';
 import 'package:untitled3/features/manufacturers_list/data/storage/collections/manufacturers_page_collection.dart';
 
 /// Getter Method For Convenience Instance Access
@@ -22,7 +23,7 @@ class StorageHandler {
   Future<void> openDB() async {
     final dir = await getApplicationDocumentsDirectory();
     _isar = await Isar.open(
-      [ManufacturersPageCollectionSchema],
+      [ManufacturersPageCollectionSchema, ManufacturerModelCollectionSchema],
       inspector: true,
       directory: dir.path,
     );

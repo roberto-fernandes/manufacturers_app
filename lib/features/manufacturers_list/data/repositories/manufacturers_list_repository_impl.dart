@@ -15,12 +15,12 @@ class ManufacturersListRepositoryImpl
   Future<ManufacturersPage> getManufacturersPage({required int page}) async {
     try {
       final ManufacturersPage result =
-          await networkDataSource!.getManufacturersPage(page: page);
-      storageDataSource!.saveManufacturersPage(manufacturersPage: result);
+          await networkDataSource.getManufacturersPage(page: page);
+      storageDataSource.saveManufacturersPage(manufacturersPage: result);
       return result;
     } catch (e) {
       final ManufacturersPage result =
-          await storageDataSource!.getManufacturersPage(page: page);
+          await storageDataSource.getManufacturersPage(page: page);
       return result;
     }
   }
