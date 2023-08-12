@@ -9,7 +9,7 @@ import 'package:untitled3/features/common/presentation/widgets/default_error_mes
 import 'package:untitled3/features/common/presentation/widgets/empty_list_widget.dart';
 import 'package:untitled3/features/common/presentation/widgets/retry_widget.dart';
 import 'package:untitled3/features/manufacturer_details/domain/entities/manufacturer_model.dart';
-import 'package:untitled3/features/manufacturer_details/presentation/provider/manufacturer_model_provider.dart';
+import 'package:untitled3/features/manufacturer_details/presentation/provider/manufacturer_models_provider.dart';
 import 'package:untitled3/features/manufacturers_list/domain/entities/manufacturers_page_result.dart';
 
 part 'manufacturer_details_screen.dart';

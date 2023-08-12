@@ -4,27 +4,27 @@ import 'package:untitled3/features/manufacturer_details/domain/entities/manufact
 import 'package:untitled3/features/manufacturer_details/domain/repositories/manufacturer_details_repository.dart';
 
 final getManufacturerModelUseCase = Provider(
-  (ref) => GetManufacturerModel(ref.read(manufacturerDetailsRepository)),
+  (ref) => GetManufacturerModels(ref.read(manufacturerDetailsRepository)),
 );
 
-class GetManufacturerModel
-    implements UseCase<List<ManufacturerModel>, GetManufacturerModelRequest> {
+class GetManufacturerModels
+    implements UseCase<List<ManufacturerModel>, GetManufacturerModelsRequest> {
   final ManufacturerDetailsRepository repository;
 
-  GetManufacturerModel(this.repository);
+  GetManufacturerModels(this.repository);
 
   @override
-  Future<List<ManufacturerModel>> call(GetManufacturerModelRequest params) async {
+  Future<List<ManufacturerModel>> call(GetManufacturerModelsRequest params) async {
     return repository.getManufacturerModel(
       manufacturer: params.manufacturer,
     );
   }
 }
 
-class GetManufacturerModelRequest {
+class GetManufacturerModelsRequest {
   final String manufacturer;
 
-  GetManufacturerModelRequest({
+  GetManufacturerModelsRequest({
     required this.manufacturer,
   });
 }

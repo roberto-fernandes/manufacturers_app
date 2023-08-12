@@ -10,9 +10,9 @@ class _ModelList extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final AsyncValue<List<ManufacturerModel>> state =
-        ref.watch(manufacturerModelProvider(manufacturer));
-    final ManufacturerModelNotifier notifier =
-        ref.read(manufacturerModelProvider(manufacturer).notifier);
+        ref.watch(manufacturerModelsProvider(manufacturer));
+    final ManufacturerModelsNotifier notifier =
+        ref.read(manufacturerModelsProvider(manufacturer).notifier);
     return AsyncValueWidget<List<ManufacturerModel>>(
       value: state,
       customError: RetryWidget(

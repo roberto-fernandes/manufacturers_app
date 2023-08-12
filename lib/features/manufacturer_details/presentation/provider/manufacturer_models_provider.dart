@@ -2,14 +2,14 @@ import 'dart:async';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:untitled3/features/manufacturer_details/domain/entities/manufacturer_model.dart';
-import 'package:untitled3/features/manufacturer_details/domain/use_cases/get_manufacturer_makes.dart';
+import 'package:untitled3/features/manufacturer_details/domain/use_cases/get_manufacturer_models.dart';
 
-final manufacturerModelProvider = AsyncNotifierProviderFamily<
-    ManufacturerModelNotifier, List<ManufacturerModel>, String>(
-  ManufacturerModelNotifier.new,
+final manufacturerModelsProvider = AsyncNotifierProviderFamily<
+    ManufacturerModelsNotifier, List<ManufacturerModel>, String>(
+  ManufacturerModelsNotifier.new,
 );
 
-class ManufacturerModelNotifier
+class ManufacturerModelsNotifier
     extends FamilyAsyncNotifier<List<ManufacturerModel>, String> {
   @override
   FutureOr<List<ManufacturerModel>> build(String arg) {
@@ -17,9 +17,9 @@ class ManufacturerModelNotifier
   }
 
   Future<List<ManufacturerModel>> _loadModel() async {
-    final GetManufacturerModel getManufacturerModel =
+    final GetManufacturerModels getManufacturerModel =
         ref.read(getManufacturerModelUseCase);
-    return await getManufacturerModel(GetManufacturerModelRequest(
+    return await getManufacturerModel(GetManufacturerModelsRequest(
       manufacturer: arg,
     ));
   }
