@@ -5,7 +5,7 @@ part 'manufacturers_page_result.freezed.dart';
 @freezed
 class ManufacturersPageResult with _$ManufacturersPageResult {
   const factory ManufacturersPageResult({
-    required String country,
-    required String name,
+    required String? country,
+    required String? name,
   }) = _ManufacturersPageResult;
 }

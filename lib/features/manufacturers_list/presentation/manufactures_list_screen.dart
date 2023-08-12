@@ -14,25 +14,34 @@ class ManufacturesListScreen extends ConsumerWidget {
 
     return Scaffold(
       body: SafeArea(
-        child: RefreshIndicator(
-          onRefresh: notifier.reset,
-          child: ListView(
-            controller: _controller,
-            children: [
-              ...manufacturers.map((e) => Text(e.count.toString())).toList(),
-              AsyncValueWidget<int>(
-                value: pageState,
-                data: (data) {
-                  return ElevatedButton(
-                    onPressed: () async {
-                      await notifier.loadNextPage();
-                      _scrollDown();
-                    },
-                    child: const Text('Add'),
-                  );
-                },
-              ),
-            ],
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: SizeConfig.mainContentHorizontalPadding,
+          ),
+          child: RefreshIndicator(
+            onRefresh: notifier.reset,
+            child: ListView(
+              controller: _controller,
+              children: [
+                for (ManufacturersPage page in manufacturers)
+                  ...page.result.map((e) => _ManufacturerItem(e)).toList(),
+                AsyncValueWidget<int>(
+                  value: pageState,
+                  data: (pageData) {
+                    if(manufacturers.isNotEmpty && manufacturers.last.count < 1) {
+                      return const Center(child: Text('No more items'));
+                    }
+                    return ElevatedButton(
+                      onPressed: () async {
+                        await notifier.loadNextPage();
+                        _scrollDown();
+                      },
+                      child: const Text('Add'),
+                    );
+                  },
+                ),
+              ],
+            ),
           ),
         ),
       ),

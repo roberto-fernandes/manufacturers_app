@@ -12,8 +12,10 @@ final manufacturersPageNotifier =
 
 class ManufacturersPageProvider extends AsyncNotifier<int> {
   @override
-  FutureOr<int> build() {
-    return 0;
+  FutureOr<int> build() async {
+    state = const AsyncData(0);
+    await loadNextPage();
+    return state.value ?? 0;
   }
 
   Future<void> loadNextPage() async {

@@ -9,8 +9,8 @@ part of 'manufacturers_page_result_dto.dart';
 ManufacturersPageResultDto _$ManufacturersPageResultDtoFromJson(
         Map<String, dynamic> json) =>
     ManufacturersPageResultDto(
-      country: json['Country'] as String,
-      commonName: json['Mfr_CommonName'] as String,
+      country: json['Country'] as String?,
+      commonName: json['Mfr_CommonName'] as String?,
       id: json['Mfr_ID'] as int,
     );
 

@@ -6,9 +6,9 @@ part 'manufacturers_page_result_dto.g.dart';
 @JsonSerializable(explicitToJson: true)
 class ManufacturersPageResultDto {
   @JsonKey(name: 'Country')
-  final String country;
+  final String? country;
   @JsonKey(name: 'Mfr_CommonName')
-  final String commonName;
+  final String? commonName;
   @JsonKey(name: 'Mfr_ID')
   final int id;
 

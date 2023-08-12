@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ManufacturersPageResult {
-  String get country => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
+  String? get country => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ManufacturersPageResultCopyWith<ManufacturersPageResult> get copyWith =>
@@ -30,7 +30,7 @@ abstract class $ManufacturersPageResultCopyWith<$Res> {
           $Res Function(ManufacturersPageResult) then) =
       _$ManufacturersPageResultCopyWithImpl<$Res, ManufacturersPageResult>;
   @useResult
-  $Res call({String country, String name});
+  $Res call({String? country, String? name});
 }
 
 /// @nodoc
@@ -47,18 +47,18 @@ class _$ManufacturersPageResultCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? country = null,
-    Object? name = null,
+    Object? country = freezed,
+    Object? name = freezed,
   }) {
     return _then(_value.copyWith(
-      country: null == country
+      country: freezed == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 }
@@ -71,7 +71,7 @@ abstract class _$$_ManufacturersPageResultCopyWith<$Res>
       __$$_ManufacturersPageResultCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String country, String name});
+  $Res call({String? country, String? name});
 }
 
 /// @nodoc
@@ -86,18 +86,18 @@ class __$$_ManufacturersPageResultCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? country = null,
-    Object? name = null,
+    Object? country = freezed,
+    Object? name = freezed,
   }) {
     return _then(_$_ManufacturersPageResult(
-      country: null == country
+      country: freezed == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as String,
-      name: null == name
+              as String?,
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -108,9 +108,9 @@ class _$_ManufacturersPageResult implements _ManufacturersPageResult {
   const _$_ManufacturersPageResult({required this.country, required this.name});
 
   @override
-  final String country;
+  final String? country;
   @override
-  final String name;
+  final String? name;
 
   @override
   String toString() {
@@ -140,13 +140,13 @@ class _$_ManufacturersPageResult implements _ManufacturersPageResult {
 
 abstract class _ManufacturersPageResult implements ManufacturersPageResult {
   const factory _ManufacturersPageResult(
-      {required final String country,
-      required final String name}) = _$_ManufacturersPageResult;
+      {required final String? country,
+      required final String? name}) = _$_ManufacturersPageResult;
 
   @override
-  String get country;
+  String? get country;
   @override
-  String get name;
+  String? get name;
   @override
   @JsonKey(ignore: true)
   _$$_ManufacturersPageResultCopyWith<_$_ManufacturersPageResult>
