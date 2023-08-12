@@ -27,8 +27,19 @@ class ManufacturesListScreen extends ConsumerWidget {
                   ...page.result.map((e) => _ManufacturerItem(e)).toList(),
                 AsyncValueWidget<int>(
                   value: pageState,
+                  customError: Column(
+                    children: [
+                      const Center(child: Text('Unable to load data')),
+                      const SizedBox(height: SizeConfig.innerSectionSpace),
+                      ElevatedButton(
+                        onPressed: notifier.reloadPage,
+                        child: const Text('Retry'),
+                      ),
+                    ],
+                  ),
                   data: (pageData) {
-                    if(manufacturers.isNotEmpty && manufacturers.last.count < 1) {
+                    if (manufacturers.isNotEmpty &&
+                        manufacturers.last.count < 1) {
                       return const Center(child: Text('No more items'));
                     }
                     return ElevatedButton(

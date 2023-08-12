@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ManufacturersPageResult {
   String? get country => throw _privateConstructorUsedError;
   String? get name => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ManufacturersPageResultCopyWith<ManufacturersPageResult> get copyWith =>
@@ -30,7 +31,7 @@ abstract class $ManufacturersPageResultCopyWith<$Res> {
           $Res Function(ManufacturersPageResult) then) =
       _$ManufacturersPageResultCopyWithImpl<$Res, ManufacturersPageResult>;
   @useResult
-  $Res call({String? country, String? name});
+  $Res call({String? country, String? name, int id});
 }
 
 /// @nodoc
@@ -49,6 +50,7 @@ class _$ManufacturersPageResultCopyWithImpl<$Res,
   $Res call({
     Object? country = freezed,
     Object? name = freezed,
+    Object? id = null,
   }) {
     return _then(_value.copyWith(
       country: freezed == country
@@ -59,6 +61,10 @@ class _$ManufacturersPageResultCopyWithImpl<$Res,
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
     ) as $Val);
   }
 }
@@ -71,7 +77,7 @@ abstract class _$$_ManufacturersPageResultCopyWith<$Res>
       __$$_ManufacturersPageResultCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? country, String? name});
+  $Res call({String? country, String? name, int id});
 }
 
 /// @nodoc
@@ -88,6 +94,7 @@ class __$$_ManufacturersPageResultCopyWithImpl<$Res>
   $Res call({
     Object? country = freezed,
     Object? name = freezed,
+    Object? id = null,
   }) {
     return _then(_$_ManufacturersPageResult(
       country: freezed == country
@@ -98,6 +105,10 @@ class __$$_ManufacturersPageResultCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String?,
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -105,16 +116,19 @@ class __$$_ManufacturersPageResultCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ManufacturersPageResult implements _ManufacturersPageResult {
-  const _$_ManufacturersPageResult({required this.country, required this.name});
+  const _$_ManufacturersPageResult(
+      {required this.country, required this.name, required this.id});
 
   @override
   final String? country;
   @override
   final String? name;
+  @override
+  final int id;
 
   @override
   String toString() {
-    return 'ManufacturersPageResult(country: $country, name: $name)';
+    return 'ManufacturersPageResult(country: $country, name: $name, id: $id)';
   }
 
   @override
@@ -123,11 +137,12 @@ class _$_ManufacturersPageResult implements _ManufacturersPageResult {
         (other.runtimeType == runtimeType &&
             other is _$_ManufacturersPageResult &&
             (identical(other.country, country) || other.country == country) &&
-            (identical(other.name, name) || other.name == name));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.id, id) || other.id == id));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, country, name);
+  int get hashCode => Object.hash(runtimeType, country, name, id);
 
   @JsonKey(ignore: true)
   @override
@@ -141,12 +156,15 @@ class _$_ManufacturersPageResult implements _ManufacturersPageResult {
 abstract class _ManufacturersPageResult implements ManufacturersPageResult {
   const factory _ManufacturersPageResult(
       {required final String? country,
-      required final String? name}) = _$_ManufacturersPageResult;
+      required final String? name,
+      required final int id}) = _$_ManufacturersPageResult;
 
   @override
   String? get country;
   @override
   String? get name;
+  @override
+  int get id;
   @override
   @JsonKey(ignore: true)
   _$$_ManufacturersPageResultCopyWith<_$_ManufacturersPageResult>

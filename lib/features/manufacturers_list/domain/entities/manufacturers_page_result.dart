@@ -7,5 +7,6 @@ class ManufacturersPageResult with _$ManufacturersPageResult {
   const factory ManufacturersPageResult({
     required String? country,
     required String? name,
+    required int id,
   }) = _ManufacturersPageResult;
 }

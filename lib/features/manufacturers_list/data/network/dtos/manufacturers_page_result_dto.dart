@@ -29,6 +29,7 @@ extension ManufacturersPageResultDtoX on ManufacturersPageResultDto {
     return ManufacturersPageResult(
       country: country,
       name: commonName,
+      id: id,
     );
   }
 }

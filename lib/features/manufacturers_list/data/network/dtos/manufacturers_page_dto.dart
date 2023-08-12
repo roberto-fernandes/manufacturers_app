@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:untitled3/features/manufacturers_list/data/dtos/manufacturers_page_result_dto.dart';
+import 'package:untitled3/features/manufacturers_list/data/network/dtos/manufacturers_page_result_dto.dart';
 import 'package:untitled3/features/manufacturers_list/domain/entities/manufacturers_page.dart';
 
 part 'manufacturers_page_dto.g.dart';

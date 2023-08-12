@@ -27,11 +27,19 @@ class ManufacturersPageProvider extends AsyncNotifier<int> {
     }
     final int nextPage = currentPage + 1;
     state = const AsyncLoading();
-    final ManufacturersPage page =
-        await getManufacturersPage(GetManufacturersPageRequest(page: nextPage));
+    try {
+      final ManufacturersPage page = await getManufacturersPage(
+          GetManufacturersPageRequest(page: nextPage));
 
-    ref.read(manufacturerListProvider.notifier).addPage(page);
-    state = AsyncData(nextPage);
+      ref.read(manufacturerListProvider.notifier).addPage(page);
+      state = AsyncData(nextPage);
+    } catch (e) {
+      state = AsyncError(e, StackTrace.current);
+    }
+  }
+
+  Future<void> reloadPage() async {
+    await loadNextPage();
   }
 
   Future<void> reset() async {
