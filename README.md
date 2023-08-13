@@ -18,27 +18,27 @@ The application uses a feature-driven directory structure. This project structur
   #### Icons
   - cupertino_icons
   
-  ### Navigation
+  #### Navigation
   - auto_route
 
-  # code generator
+  #### code generator
   - freezed
   - freezed_annotation
   - json_annotation
 
-  # Utils
+  #### Utils
   - equatable
   - path_provider
 
-  # Network
+  #### Network
   - dio
 
-  # Storage
+  #### Storage
   - isar
   - isar_flutter_libs
 
-  # State management
+  #### State management
   - flutter_riverpod
 
-  # Tests
+  #### Tests
   - mockito
