@@ -15,7 +15,7 @@
 The application uses a feature-driven directory structure. This project structure enables to scale the project by having self-contained features. This enables it to scale as the number of features increases and allows developers to work on different features in parallel.
 
 ## Packages Used
-  # Icons
+  ### Icons
   - cupertino_icons
   
   # Navigation
