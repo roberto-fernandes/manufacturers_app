@@ -7,6 +7,7 @@ final manufacturerListProvider =
   ManufacturerListNotifier.new,
 );
 
+/// Notifier class for managing the fetched list of manufacturers.
 class ManufacturerListNotifier extends Notifier<List<ManufacturersPage>> {
   @override
   List<ManufacturersPage> build() {

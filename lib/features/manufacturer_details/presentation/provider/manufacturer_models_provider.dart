@@ -9,6 +9,7 @@ final manufacturerModelsProvider = AsyncNotifierProviderFamily<
   ManufacturerModelsNotifier.new,
 );
 
+/// Notifier class for managing manufacturers models.
 class ManufacturerModelsNotifier
     extends FamilyAsyncNotifier<List<ManufacturerModel>, String> {
   @override

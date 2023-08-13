@@ -10,6 +10,7 @@ final manufacturersPageNotifier =
   ManufacturersPageNotifier.new,
 );
 
+/// Notifier class for managing manufacturers pages.
 class ManufacturersPageNotifier extends AsyncNotifier<int> {
   @override
   FutureOr<int> build() async {
