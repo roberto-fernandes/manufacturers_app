@@ -12,7 +12,7 @@
 
 ## Architecture
 
-The application uses a feature-driven directory structure. This project structure enables to scale the project by having self-contained features. This enables it to scale as the number of features increases and allows developers to work on different features in parallel.
+The application uses a feature-driven directory structure. This enables to scale the project by having self-contained features. Furthermore, it facilitates improved task segregation as developers can address diverse features.
 
 ## Packages Used
   #### Icons
