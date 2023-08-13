@@ -8,4 +8,4 @@
 
 ## Recording
 
-![](app_demo.gif)
+![width=50% height=50%](app_demo.gif)
