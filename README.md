@@ -8,4 +8,4 @@
 
 ## Recording
 
-![width=50% height=50%](app_demo.gif)
+![](app_demo.gif){:height="50%" width="50%"}
