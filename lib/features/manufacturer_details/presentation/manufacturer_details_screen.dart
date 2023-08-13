@@ -24,7 +24,7 @@ class ManufacturesDetailsScreen extends StatelessWidget {
           ),
           child: item.commonName == null
               ? const DefaultErrorMessage()
-              : ModelList(
+              : _ModelList(
                   manufacturer: item.commonName!,
                 ),
         ),

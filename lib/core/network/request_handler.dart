@@ -22,7 +22,7 @@ class RequestHandler {
     required T Function(dynamic data, Headers? headers)? mapper,
   }) async {
     final Response response = await _dio.get(
-      path ?? '',
+      path?.trim() ?? '',
       queryParameters: queryParameters,
     );
 
